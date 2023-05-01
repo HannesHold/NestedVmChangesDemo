@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/NestedVmChangesDemo/.vs/NestedVmChangesDemo
+/NestedVmChangesDemo/NestedVmChangesDemo/bin/Debug/net6.0-windows
+/NestedVmChangesDemo/NestedVmChangesDemo/obj
+/NestedVmChangesDemo/NestedVmChangesDemo/NestedVmChangesDemo.csproj.user
