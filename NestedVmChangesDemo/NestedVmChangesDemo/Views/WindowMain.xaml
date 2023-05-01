@@ -1,0 +1,30 @@
+﻿<Window x:Class="NestedVmChangesDemo.Views.WindowMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NestedVmChangesDemo.Views"
+        xmlns:viewModels="clr-namespace:NestedVmChangesDemo.ViewModels"
+        mc:Ignorable="d"
+        Title="WindowMain" Height="450" Width="800">
+
+    <Window.DataContext>
+        <viewModels:VmWindowMain />
+    </Window.DataContext>
+    
+    <Grid>
+
+        <StackPanel>
+            <TextBlock Text="Title: (Cant be empty)" />
+            <TextBox Text="{Binding Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+            <TextBlock Text="Nested VM Name: (Cant be empty)" />
+            <TextBox Text="{Binding NestedData.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="Nested VM Age: (Must be greated than 18)" />
+            <TextBox Text="{Binding NestedData.Age, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+            <Button Content="Execute my command" Command="{Binding MyCommand, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
+        
+    </Grid>
+</Window>
